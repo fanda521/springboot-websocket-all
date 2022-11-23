@@ -12,6 +12,10 @@
         <option value="$PROJECT_DIR$/springboot-websocket-all/websocket-client02/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-websocket-all/websocket-client/pom.xml" />
         <option value="$PROJECT_DIR$/spring-websocket-service/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/client02/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-client01/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-websocket/pom.xml" />
       </list>
     </option>
   </component>
