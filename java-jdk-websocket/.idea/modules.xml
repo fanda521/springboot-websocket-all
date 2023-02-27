@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/java-jdk-websocket.iml" filepath="$PROJECT_DIR$/.idea/java-jdk-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdk-websocket-client01/jdk-websocket-client01.iml" filepath="$PROJECT_DIR$/jdk-websocket-client01/jdk-websocket-client01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdk-websocket-client02/jdk-websocket-client02.iml" filepath="$PROJECT_DIR$/jdk-websocket-client02/jdk-websocket-client02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdk-websocket-client03/jdk-websocket-client03.iml" filepath="$PROJECT_DIR$/jdk-websocket-client03/jdk-websocket-client03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdk-websocket-server/jdk-websocket-server.iml" filepath="$PROJECT_DIR$/jdk-websocket-server/jdk-websocket-server.iml" />
+    </modules>
+  </component>
+</project>
