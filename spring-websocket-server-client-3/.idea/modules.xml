@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket-client01/spring-websocket-client01.iml" filepath="$PROJECT_DIR$/spring-websocket-client01/spring-websocket-client01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket-client02/spring-websocket-client02.iml" filepath="$PROJECT_DIR$/spring-websocket-client02/spring-websocket-client02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket-client03/spring-websocket-client03.iml" filepath="$PROJECT_DIR$/spring-websocket-client03/spring-websocket-client03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket-server/spring-websocket-server.iml" filepath="$PROJECT_DIR$/spring-websocket-server/spring-websocket-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-websocket-server-client-3.iml" filepath="$PROJECT_DIR$/.idea/spring-websocket-server-client-3.iml" />
+    </modules>
+  </component>
+</project>
