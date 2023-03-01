@@ -7,7 +7,7 @@ import org.springframework.web.reactive.HandlerMapping;
 import org.springframework.web.reactive.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.reactive.socket.WebSocketHandler;
 import org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter;
-import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -29,10 +29,5 @@ public class WebSocketConfig {
         return new WebSocketHandlerAdapter();
     }
 
-    //使用boot内置tomcat时需要注入此bean
-    @Bean
-    public ServerEndpointExporter serverEndpointExporter() {
-        return new ServerEndpointExporter();
-    }
 
 }

@@ -14,7 +14,7 @@ public class Client {
   public static void main(String[] args) throws URISyntaxException {
 
     WebSocketClient client = new ReactorNettyWebSocketClient();
-    URI url = new URI("ws://localhost:7552/websocket/JdkWebSocketClient01");
+    URI url = new URI("ws://10.1.5.13:7420/path");
     client.execute(url,
         session -> session.send(Mono.just(session.textMessage("hello world")))
             .thenMany(session.receive().map(WebSocketMessage::getPayloadAsText).log())

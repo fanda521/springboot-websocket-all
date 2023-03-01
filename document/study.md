@@ -1,5 +1,13 @@
 ## websocket 记录
 
+## 实用工具类
+
+```
+http://websocket.jsonin.com/
+```
+
+
+
 ## 1.spring 整合websocket
 
 ### 1.不用注解的方式
@@ -441,3 +449,127 @@ jdk:springboot-websocket-all/java-jdk-websocket/
 
 
 ![1677486222957](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1677486222957.png)
+
+
+
+
+
+## 3.webflux整合websocket
+
+### 1.springboot方式
+
+#### 1.server端
+
+##### 1.pom.xml
+
+```xml
+1.注意点，不要添加普通web的jar,否则会默认启动普通的tomcat,而不是webflux的netty,导致ws启动不了
+自己就在这里栽了跟头
+2.内容
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <!--webflux-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+##### 2.webSocketConfig
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.HandlerMapping;
+import org.springframework.web.reactive.handler.SimpleUrlHandlerMapping;
+import org.springframework.web.reactive.socket.WebSocketHandler;
+import org.springframework.web.reactive.socket.server.support.WebSocketHandlerAdapter;
+
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+@Configuration
+public class WebSocketConfig {
+    @Bean
+    public HandlerMapping webSocketMapping() {
+        SimpleUrlHandlerMapping simpleUrlHandlerMapping = new SimpleUrlHandlerMapping();
+        Map<String, WebSocketHandler> handlerMap = new LinkedHashMap<>();
+        handlerMap.put("/path", new EchoHandler());
+        simpleUrlHandlerMapping.setUrlMap(handlerMap);
+        simpleUrlHandlerMapping.setOrder(-1);
+        return simpleUrlHandlerMapping;
+    }
+
+    @Bean
+    public WebSocketHandlerAdapter handlerAdapter() {
+        return new WebSocketHandlerAdapter();
+    }
+    
+
+}
+```
+
+##### 3.handler
+
+```java
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.socket.WebSocketHandler;
+import org.springframework.web.reactive.socket.WebSocketMessage;
+import org.springframework.web.reactive.socket.WebSocketSession;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Component
+public class EchoHandler implements WebSocketHandler {
+    @Override
+    public Mono<Void> handle(WebSocketSession session) {
+        Flux<WebSocketMessage> messageFlux = session.receive().map(message -> {
+            String payload = message.getPayloadAsText();
+            return "Received: " + payload;
+        }).map(session::textMessage).log();
+        return session.send(messageFlux);
+    }
+
+
+}
+```
+
