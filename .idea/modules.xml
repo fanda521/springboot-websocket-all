@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/client02/client02.iml" filepath="$PROJECT_DIR$/client02/client02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket/service/service.iml" filepath="$PROJECT_DIR$/spring-websocket/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-client01/spring-client01.iml" filepath="$PROJECT_DIR$/spring-client01/spring-client01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-websocket/spring-websocket.iml" filepath="$PROJECT_DIR$/spring-websocket/spring-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket/springboot-websocket.iml" filepath="$PROJECT_DIR$/springboot-websocket/springboot-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket-all/springboot-websocket-all.iml" filepath="$PROJECT_DIR$/springboot-websocket-all/springboot-websocket-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket-all/websocket-client/websocket-client.iml" filepath="$PROJECT_DIR$/springboot-websocket-all/websocket-client/websocket-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket-all/websocket-client02/websocket-client02.iml" filepath="$PROJECT_DIR$/springboot-websocket-all/websocket-client02/websocket-client02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket-all/websocket-client03/websocket-client03.iml" filepath="$PROJECT_DIR$/springboot-websocket-all/websocket-client03/websocket-client03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-websocket-all/websocket-server/websocket-server.iml" filepath="$PROJECT_DIR$/springboot-websocket-all/websocket-server/websocket-server.iml" />
+    </modules>
+  </component>
+</project>

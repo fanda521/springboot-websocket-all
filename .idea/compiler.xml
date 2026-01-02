@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-client01" />
+        <module name="websocket-client02" />
+        <module name="websocket-client03" />
+        <module name="websocket-server" />
+        <module name="service" />
+        <module name="springboot-websocket" />
+        <module name="client02" />
+        <module name="websocket-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client02" target="1.8" />
+      <module name="service" target="1.8" />
+      <module name="spring-client01" target="1.8" />
+      <module name="spring-websocket" target="1.8" />
+      <module name="springboot-websocket" target="1.8" />
+      <module name="springboot-websocket-all" target="1.8" />
+      <module name="websocket-client" target="1.8" />
+      <module name="websocket-client02" target="1.8" />
+      <module name="websocket-client03" target="1.8" />
+      <module name="websocket-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="client02" options="-parameters" />
+      <module name="service" options="-parameters" />
+      <module name="spring-client01" options="-parameters" />
+      <module name="springboot-websocket" options="-parameters" />
+      <module name="websocket-client" options="-parameters" />
+      <module name="websocket-client02" options="-parameters" />
+      <module name="websocket-client03" options="-parameters" />
+      <module name="websocket-server" options="-parameters" />
+    </option>
+  </component>
+</project>

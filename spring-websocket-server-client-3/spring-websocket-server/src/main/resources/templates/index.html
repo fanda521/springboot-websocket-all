@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>client</title>
+</head>
+<body>
+    <button id="send">发送</button><br>
+    <input type="text" id="message">
+
+    <script type="text/javascript">
+        onload = function(){
+            var host= "localhost:8080";
+            var websocket;
+            if ('WebSocket' in window) {
+                websocket = new WebSocket("ws://"+host+"/testHandler.do?userId=9528");
+            } else if ('MozWebSocket' in window) {
+                websocket = new MozWebSocket("ws://"+host+"/testHandler.do?userId=9528");
+            } else {
+                websocket = new SockJS("http://"+host+"/socketJs/testHandler.do?userId=9528");
+            }
+            websocket.onopen = function (evnt) {
+                console.log("链接服务器成功!")
+            };
+            websocket.onmessage = function (evnt) {
+                console.log(evnt.data);
+            };
+            websocket.onerror = function (evnt) {
+                console.log("websocket错误");
+            };
+            websocket.onclose = function (evnt) {
+                console.log("与服务器断开了链接!")
+            }
+            document.getElementById('send').onclick=function (ev) {
+                send();
+            }
+            function send(){
+                if (websocket != null) {
+                    var message = document.getElementById('message').value;
+                    websocket.send(message);
+                } else {
+                    alert('未与服务器链接.');
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>
