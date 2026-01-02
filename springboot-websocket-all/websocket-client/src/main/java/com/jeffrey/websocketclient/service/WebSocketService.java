@@ -19,4 +19,17 @@ public interface WebSocketService {
      * @param message
      */
      void appointSending(String name,String message);
+
+    /**
+     * 群发
+     * @param message
+     */
+    void groupSendingSecond(String message);
+
+    /**
+     * 指定发送
+     * @param name
+     * @param message
+     */
+    void appointSendingSecond(String name,String message);
 }
