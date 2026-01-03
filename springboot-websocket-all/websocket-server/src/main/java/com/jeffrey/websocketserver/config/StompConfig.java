@@ -19,6 +19,8 @@ public class StompConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // 暴露 STOMP 端点，允许跨域
-        registry.addEndpoint("/ws/stomp").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/ws/stomp","/ws/p2p")
+                .setAllowedOrigins("*")
+                .withSockJS();
     }
 }
