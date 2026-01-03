@@ -21,12 +21,18 @@
       <module name="service" target="1.8" />
       <module name="spring-client01" target="1.8" />
       <module name="spring-websocket" target="1.8" />
+      <module name="spring-websocket-service" target="1.8" />
       <module name="springboot-websocket" target="1.8" />
       <module name="springboot-websocket-all" target="1.8" />
       <module name="websocket-client" target="1.8" />
       <module name="websocket-client02" target="1.8" />
       <module name="websocket-client03" target="1.8" />
       <module name="websocket-server" target="1.8" />
+      <module name="wrapper (1)" target="1.5" />
+      <module name="wrapper (2)" target="1.5" />
+      <module name="wrapper (3)" target="1.5" />
+      <module name="wrapper (4)" target="1.5" />
+      <module name="wrapper (5)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -34,6 +40,7 @@
       <module name="client02" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="spring-client01" options="-parameters" />
+      <module name="spring-websocket-service" options="-parameters" />
       <module name="springboot-websocket" options="-parameters" />
       <module name="websocket-client" options="-parameters" />
       <module name="websocket-client02" options="-parameters" />

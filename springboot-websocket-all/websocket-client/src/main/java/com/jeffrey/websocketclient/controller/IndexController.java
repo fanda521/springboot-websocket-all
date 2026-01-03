@@ -2,6 +2,7 @@ package com.jeffrey.websocketclient.controller;
 
 import com.jeffrey.websocketclient.service.impl.ScoketClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,12 @@ public class IndexController {
     @GetMapping("/sendMessage")
     public String sendMessage(String message){
         webScoketClient.groupSending(message);
+        return message;
+    }
+
+    @GetMapping("/sendMessageSecond")
+    public String sendMessageSecond(String message){
+        webScoketClient.groupSendingSecond(message);
         return message;
     }
 }
