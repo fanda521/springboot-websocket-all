@@ -24,7 +24,7 @@ public class WebSocketConfig {
     @Primary
     public WebSocketClient webSocketClient() {
         try {
-            WebSocketClient webSocketClient = new WebSocketClient(new URI("ws://localhost:9001/websocket/test1"),new Draft_6455()) {
+            WebSocketClient webSocketClient = new WebSocketClient(new URI("ws://localhost:8080/im/ws?userId=001"),new Draft_6455()) {
                 @Override
                 public void onOpen(ServerHandshake handshakedata) {
                     log.info("[websocket] 连接成功");

@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  instance-id: ${random.value}  # 实例唯一标识，多实例部署时区分
+  address: 0.0.0.0
+
+spring:
+  # Redis配置
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+# IM自定义配置
+im:
+  # 聊天室配置
+  chat-room:
+    prefix: im:chat:room        # 聊天室Redis前缀
+    expire-time: 300             # 5分钟无发言自动退群（秒）
+  # 用户会话配置
+  user-session:
+    prefix: im:user:session     # 用户会话Redis前缀
+    room-user-prefix: im:room:user # 房间-用户映射前缀
+  # Redis发布订阅
+  redis:
+    channel: im:message:channel  # 消息广播通道
+  # 故障转移
+  failover:
+    server-list: http://localhost:8080,http://localhost:8081 # 服务实例列表
+    retry-interval: 3000         # 重试间隔（毫秒）
+  # WebSocket配置（移到im节点下）
+  websocket:
+    path: /im/ws
+    allowed-origins: "*"

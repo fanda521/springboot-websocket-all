@@ -1,0 +1,17 @@
+# 客户端application.yml（层级完全不变）
+server:
+  port: 9000  # 客户端端口
+im:
+  client:
+    userId: test_user_001        # 原有字段：用户ID
+    connect-mode: random        # 新增字段：连接模式（random/specified），与userId同级
+  websocket:
+    path: /im/ws                # WS路径（原有）
+    heartbeat-interval: 5000    # 心跳间隔（原有）
+  server:
+    list: http://localhost:8080,http://localhost:8081,http://localhost:8082  # 服务端实例列表（原有）
+    retry-interval: 3000        # 重连间隔（原有）
+    timeout: 10000               # 连接超时（原有）
+  failover:
+    enable: true                # 启用故障转移（原有）
+    max-retry: 3                # 最大重试次数（原有）
